@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STUDENT OF JAMES GRADE BOOK APP </title>
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #000000, #8f94fb);
+      color: #fff;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .container {
+      background: rgba(10, 65, 216, 0.1);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      margin-bottom: 20PX;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>GRADE BOOK APP BY JAMES</h1>
+  </div>
+  <script>
+    const interns = [
+      { name: "BRUCE", scores: [15, 25, 89, 19, 79] },
+      { name: "ESTHER", scores: [25, 43, 19, 29, 52] },
+      { name: "EMMANUEL", scores: [57, 13, 39, 54, 49] },
+      { name: "CHIDINDU", scores: [58, 49, 39, 49, 30] },
+      { name: "PHILIP", scores: [20, 45, 17, 30, 85] },
+    ];
+    function calculateAverage(scores) {
+      const total = scores.reduce((sum, score) => sum + score, 0);
+      return (total / scores.length).toFixed(2);
+    }
+
+    interns.forEach((intern) => {
+      const average = calculateAverage(intern.scores);
+      console.log(`${intern.name}'s average score: ${average}`);
+    });
+  </script>
+</body>
+</html>

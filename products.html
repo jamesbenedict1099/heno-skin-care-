@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Heno Skincare — Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <img src="images/logo.png" alt="Heno Logo">
+        <h1>Heno Skincare</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="skin-guide.html">Skin Guide</a>
+        <a href="contact.html">Contact</a>
+        <div class="search-wrap">
+          <input id="searchInput" class="search" placeholder="Search products or concerns...">
+          <button id="modeToggle" class="toggle-mode" title="Toggle theme">🌓</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="left">
+          <h2>Our Best Skincare Collection</h2>
+          <p>Discover a curated selection of gentle, effective products crafted to nourish every skin type. Use the search bar to quickly find products for pimples, dark spots, dryness, and more.</p>
+          <button class="cta" onclick="document.getElementById('productGrid').scrollIntoView({behavior:'smooth'})">Browse Products</button>
+        </div>
+        <div class="right">
+          <!-- decorative -->
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section" id="productGrid">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+        <h3 style="margin:0">All Products</h3>
+        <p style="color:var(--muted);margin:0">Showing 30 premium items</p>
+      </div>
+
+      <div class="grid">
+      <!-- 30 product cards -->
+      <article class="card hide">
+        <div class="img-wrap"><img src="nivea.jpg" alt="nivea body lotion"></div>
+        <h3>NIVEA BODY LOTION</h3>
+        <p>MOISTURIZING CREAM SUITABLE FOR ALL TYPE OF SKINS</p>
+        <div class="meta">
+          <div class="price">₦7500</div>
+          <button class="shop-btn" data-link="nivea.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="facewashvit.jpg" alt="Acne Control Soap"></div>
+        <h3>YC WHITENING FACE WASH VITAMIN C</h3>
+        <p>FORMULATED WITH NATURAL EXTRACTS TO DEEPLY CLEANSE THE SKIN</p>
+        <div class="meta">
+          <div class="price">₦3500</div>
+          <button class="shop-btn" data-link="facewashvit.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="rosewater.jpg" alt="Shea Moisture Lotion"></div>
+        <h3>TRADITIONAL GLYCERRIN AND ROSE WATER</h3>
+        <p>SKIN CARE TONER AND MOISTURIZER</p>
+        <div class="meta">
+          <div class="price">₦6000</div>
+          <button class="shop-btn" data-link="rosewater.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product4.jpg" alt="Pure Clay Face Mask"></div>
+        <h3>Pure Clay Face Mask</h3>
+        <p>Detoxifies and refines pores</p>
+        <div class="meta">
+          <div class="price">₦4200</div>
+          <button class="shop-btn" data-link="product4.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product5.jpg" alt="Rejuvenating Night Cream"></div>
+        <h3>Rejuvenating Night Cream</h3>
+        <p>Repair and restore overnight</p>
+        <div class="meta">
+          <div class="price">₦8200</div>
+          <button class="shop-btn" data-link="product5.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product6.jpg" alt="Vitamin C Booster"></div>
+        <h3>Vitamin C Booster</h3>
+        <p>Antioxidant brightening serum</p>
+        <div class="meta">
+          <div class="price">₦6800</div>
+          <button class="shop-btn" data-link="product6.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product7.jpg" alt="SPF 50 Day Shield"></div>
+        <h3>SPF 50 Day Shield</h3>
+        <p>Broad spectrum sun protection</p>
+        <div class="meta">
+          <div class="price">₦5600</div>
+          <button class="shop-btn" data-link="product7.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product8.jpg" alt="Calming Aloe Gel"></div>
+        <h3>Calming Aloe Gel</h3>
+        <p>Soothes irritated and sensitive skin</p>
+        <div class="meta">
+          <div class="price">₦3000</div>
+          <button class="shop-btn" data-link="product8.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product9.jpg" alt="Clarifying Toner"></div>
+        <h3>Clarifying Toner</h3>
+        <p>Balances oil and tightens pores</p>
+        <div class="meta">
+          <div class="price">₦2500</div>
+          <button class="shop-btn" data-link="product9.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product10.jpg" alt="Retinol Renewal Serum"></div>
+        <h3>Retinol Renewal Serum</h3>
+        <p>Smooths fine lines overnight</p>
+        <div class="meta">
+          <div class="price">₦9400</div>
+          <button class="shop-btn" data-link="product10.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product11.jpg" alt="Eye Revive Gel"></div>
+        <h3>Eye Revive Gel</h3>
+        <p>Reduces puffiness and dark circles</p>
+        <div class="meta">
+          <div class="price">₦4700</div>
+          <button class="shop-btn" data-link="product11.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product12.jpg" alt="Micellar Cleanse Water"></div>
+        <h3>Micellar Cleanse Water</h3>
+        <p>Gentle makeup remover and cleanser</p>
+        <div class="meta">
+          <div class="price">₦2800</div>
+          <button class="shop-btn" data-link="product12.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product13.jpg" alt="Collagen Boost Cream"></div>
+        <h3>Collagen Boost Cream</h3>
+        <p>Firming cream for mature skin</p>
+        <div class="meta">
+          <div class="price">₦8800</div>
+          <button class="shop-btn" data-link="product13.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product14.jpg" alt="Niacinamide Serum"></div>
+        <h3>Niacinamide Serum</h3>
+        <p>Controls oil and minimizes pores</p>
+        <div class="meta">
+          <div class="price">₦7300</div>
+          <button class="shop-btn" data-link="product14.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product15.jpg" alt="Hydra Mist Toner"></div>
+        <h3>Hydra Mist Toner</h3>
+        <p>Instant hydration spray</p>
+        <div class="meta">
+          <div class="price">₦2400</div>
+          <button class="shop-btn" data-link="product15.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product16.jpg" alt="Oil-Control Moisturizer"></div>
+        <h3>Oil-Control Moisturizer</h3>
+        <p>Lightweight moisturizer for oily skin</p>
+        <div class="meta">
+          <div class="price">₦5200</div>
+          <button class="shop-btn" data-link="product16.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product17.jpg" alt="Berry Enzyme Exfoliator"></div>
+        <h3>Berry Enzyme Exfoliator</h3>
+        <p>Chemical exfoliant for glow</p>
+        <div class="meta">
+          <div class="price">₦4900</div>
+          <button class="shop-btn" data-link="product17.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product18.jpg" alt="Soothing Chamomile Mask"></div>
+        <h3>Soothing Chamomile Mask</h3>
+        <p>Gentle mask for sensitive skin</p>
+        <div class="meta">
+          <div class="price">₦3900</div>
+          <button class="shop-btn" data-link="product18.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product19.jpg" alt="Pore Refining Serum"></div>
+        <h3>Pore Refining Serum</h3>
+        <p>Targets enlarged pores</p>
+        <div class="meta">
+          <div class="price">₦6600</div>
+          <button class="shop-btn" data-link="product19.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product20.jpg" alt="Brightening Night Oil"></div>
+        <h3>Brightening Night Oil</h3>
+        <p>Evens skin tone while you sleep</p>
+        <div class="meta">
+          <div class="price">₦8000</div>
+          <button class="shop-btn" data-link="product20.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product21.jpg" alt="Tea Tree Spot Treatment"></div>
+        <h3>Tea Tree Spot Treatment</h3>
+        <p>Fast-acting blemish corrector</p>
+        <div class="meta">
+          <div class="price">₦3200</div>
+          <button class="shop-btn" data-link="product21.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product22.jpg" alt="Lip Repair Balm"></div>
+        <h3>Lip Repair Balm</h3>
+        <p>Hydrates and repairs chapped lips</p>
+        <div class="meta">
+          <div class="price">₦1500</div>
+          <button class="shop-btn" data-link="product22.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product23.jpg" alt="Foot Repair Cream"></div>
+        <h3>Foot Repair Cream</h3>
+        <p>Deep repair for cracked heels</p>
+        <div class="meta">
+          <div class="price">₦4300</div>
+          <button class="shop-btn" data-link="product23.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product24.jpg" alt="Detoxifying Body Wash"></div>
+        <h3>Detoxifying Body Wash</h3>
+        <p>Clarifies skin without drying</p>
+        <div class="meta">
+          <div class="price">₦3600</div>
+          <button class="shop-btn" data-link="product24.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product25.jpg" alt="Bright Eye Cream"></div>
+        <h3>Bright Eye Cream</h3>
+        <p>Targets dark circles and crepey skin</p>
+        <div class="meta">
+          <div class="price">₦5500</div>
+          <button class="shop-btn" data-link="product25.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product26.jpg" alt="Hydrating Hand Cream"></div>
+        <h3>Hydrating Hand Cream</h3>
+        <p>Non-greasy daily hand repair</p>
+        <div class="meta">
+          <div class="price">₦2100</div>
+          <button class="shop-btn" data-link="product26.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product27.jpg" alt="Overnight Peel"></div>
+        <h3>Overnight Peel</h3>
+        <p>Gentle chemical peel for renewal</p>
+        <div class="meta">
+          <div class="price">₦9700</div>
+          <button class="shop-btn" data-link="product27.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product28.jpg" alt="Anti-Pigmentation Serum"></div>
+        <h3>Anti-Pigmentation Serum</h3>
+        <p>Reduces dark spots and pigmentation</p>
+        <div class="meta">
+          <div class="price">₦8800</div>
+          <button class="shop-btn" data-link="product28.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product29.jpg" alt="Gentle Baby Soap"></div>
+        <h3>Gentle Baby Soap</h3>
+        <p>Mild, hypoallergenic cleansing bar</p>
+        <div class="meta">
+          <div class="price">₦1900</div>
+          <button class="shop-btn" data-link="product29.html">Shop Now</button>
+        </div>
+      </article>
+
+      <article class="card hide">
+        <div class="img-wrap"><img src="images/product30.jpg" alt="Renewal Hair Scalp Oil"></div>
+        <h3>Renewal Hair Scalp Oil</h3>
+        <p>Nourishes scalp and promotes shine</p>
+        <div class="meta">
+          <div class="price">₦5200</div>
+          <button class="shop-btn" data-link="product30.html">Shop Now</button>
+        </div>
+      </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Heno Skincare · All rights reserved · Follow us on Instagram · WhatsApp</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

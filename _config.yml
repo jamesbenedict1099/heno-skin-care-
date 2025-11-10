@@ -1,0 +1,19 @@
+# _config.yml
+
+# Site settings
+title: "Heno Skin Care"
+description: "Official website for Heno Skin Care products"
+baseurl: ""  # leave empty if hosting at https://username.github.io/repo
+url: "https://jamesbenedict1099.github.io/heno-skin-care-"  # your GitHub Pages link
+
+# Author info (optional)
+author:
+  name: "James Benedict"
+  email: "youremail@example.com"
+
+# Theme (you can change to a GitHub-supported theme)
+theme: minima
+
+# Plugins (optional)
+plugins:
+  - jekyll-feed

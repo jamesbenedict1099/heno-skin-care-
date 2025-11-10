@@ -1,4 +1,6 @@
-/* style.css - Heno Skincare (Silk white + gold) */
+/* --- Heno Skincare CSS (Silk White + Gold) --- */
+
+/* --- Variables --- */
 :root {
   --silk: #fdfcfb;
   --gold: #a87c5b;
@@ -7,6 +9,7 @@
   --muted: #6b6b6b;
 }
 
+/* --- Global Styles --- */
 * {
   box-sizing: border-box;
 }
@@ -15,7 +18,7 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden; /* Prevent shaking on mobile */
+  overflow-x: hidden;
 }
 
 body {
@@ -26,6 +29,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* --- Header / Navigation --- */
 .header {
   position: sticky;
   top: 0;
@@ -48,7 +52,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 18px 0;
-  flex-wrap: wrap; /* allows wrapping on small screens */
+  flex-wrap: wrap;
 }
 
 .brand {
@@ -109,7 +113,7 @@ body {
   cursor: pointer;
 }
 
-/* Hero */
+/* --- Hero Section --- */
 .hero {
   padding: 48px 0 24px;
 }
@@ -153,7 +157,7 @@ body {
   background: var(--gold-dark);
 }
 
-/* Grid */
+/* --- Products Grid --- */
 .products-section {
   padding: 36px 0;
 }
@@ -201,7 +205,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .6s;
+  transition: transform 0.6s;
 }
 
 .card:hover img {
@@ -240,7 +244,7 @@ body {
   color: var(--gold);
   cursor: pointer;
   font-weight: 700;
-  transition: all .25s;
+  transition: all 0.25s;
 }
 
 .shop-btn:hover {
@@ -249,7 +253,7 @@ body {
   border-color: var(--gold-dark);
 }
 
-/* Footer */
+/* --- Footer --- */
 .footer {
   padding: 28px 0;
   margin-top: 36px;
@@ -258,7 +262,7 @@ body {
   color: var(--muted);
 }
 
-/* Responsive Fixes */
+/* --- Responsive Fixes --- */
 @media (max-width: 880px) {
   .hero .hero-inner {
     flex-direction: column;
@@ -283,7 +287,7 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .container {
     padding: 0 12px;
   }
@@ -298,5 +302,42 @@ body {
 
   .grid {
     grid-template-columns: 1fr; /* stack products vertically */
+    gap: 16px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  .card h3 {
+    font-size: 15px;
+  }
+
+  .card p {
+    font-size: 13px;
+    min-height: auto;
+  }
+
+  .card .img-wrap {
+    height: 140px;
+  }
+
+  .shop-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .grid {
+    gap: 12px;
+  }
+
+  .hero h2 {
+    font-size: 20px;
+  }
+
+  .hero p {
+    font-size: 12px;
   }
 }

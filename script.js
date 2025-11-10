@@ -1,6 +1,9 @@
-// script.js - interactive features: search filter, scroll animations, smooth nav, ripple button, dark mode
+// script.js - full interactive features with dark/light mode toggle
 document.addEventListener('DOMContentLoaded', function() {
+
+  // ------------------------
   // Search filter
+  // ------------------------
   const searchInput = document.getElementById('searchInput');
   if(searchInput){
     searchInput.addEventListener('input', function(e){
@@ -8,34 +11,39 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.card').forEach(card=>{
         const name = card.querySelector('h3').innerText.toLowerCase();
         const desc = card.querySelector('p').innerText.toLowerCase();
-        if(name.includes(q) || desc.includes(q)) card.style.display = '';
-        else card.style.display = 'none';
-      })
-    })
+        card.style.display = (name.includes(q) || desc.includes(q)) ? '' : 'none';
+      });
+    });
   }
 
+  // ------------------------
   // Smooth scroll for anchor links
+  // ------------------------
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click', function(e){
       e.preventDefault();
       const id = this.getAttribute('href').slice(1);
       const el = document.getElementById(id);
-      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-    })
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    });
   });
 
+  // ------------------------
   // IntersectionObserver for reveal
+  // ------------------------
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
         entry.target.classList.remove('hide');
         io.unobserve(entry.target);
       }
-    })
+    });
   }, {threshold: 0.12});
   document.querySelectorAll('.card.hide').forEach(c=>io.observe(c));
 
-  // Ripple effect on shop buttons and redirect to product page
+  // ------------------------
+  // Ripple effect on shop buttons
+  // ------------------------
   document.querySelectorAll('.shop-btn').forEach(btn=>{
     btn.addEventListener('click', function(e){
       const rect = btn.getBoundingClientRect();
@@ -55,36 +63,66 @@ document.addEventListener('DOMContentLoaded', function() {
       requestAnimationFrame(()=> ripple.style.transform = 'scale(1.6)');
       setTimeout(()=>{ ripple.style.opacity = '0'; }, 250);
       setTimeout(()=> ripple.remove(), 700);
-      // redirect after short delay to allow ripple
+
+      // Redirect after short delay
       const link = btn.getAttribute('data-link');
       if(link) setTimeout(()=> window.location.href = link, 220);
-    })
+    });
   });
 
-  // Dark mode toggle
+  // ------------------------
+  // Dark mode toggle with sun/moon icon
+  // ------------------------
   const toggle = document.getElementById('modeToggle');
+  const modeIcon = document.getElementById('modeIcon');
+  const darkModeClass = 'dark-mode';
+
+  // Apply saved preference from localStorage
+  if(localStorage.getItem('theme') === 'dark'){
+    document.documentElement.classList.add(darkModeClass);
+    applyDarkVariables();
+    modeIcon.textContent = '🌙'; // moon icon
+  } else {
+    modeIcon.textContent = '🌞'; // sun icon
+  }
+
+  // Toggle function
   if(toggle){
     toggle.addEventListener('click', function(){
-      document.documentElement.classList.toggle('dark-mode');
-      if(document.documentElement.classList.contains('dark-mode')){
-        // apply dark variables
-        document.documentElement.style.setProperty('--silk', '#0f1115');
-        document.documentElement.style.setProperty('--gold', '#b78f62');
-        document.documentElement.style.setProperty('--gold-dark', '#8f684c');
-        document.documentElement.style.setProperty('--text', '#eaeaea');
-        document.documentElement.style.setProperty('--muted', '#cfcfcf');
+      document.documentElement.classList.toggle(darkModeClass);
+      if(document.documentElement.classList.contains(darkModeClass)){
+        localStorage.setItem('theme', 'dark');
+        applyDarkVariables();
+        modeIcon.textContent = '🌙';
       } else {
-        // revert
-        document.documentElement.style.setProperty('--silk', '#fdfcfb');
-        document.documentElement.style.setProperty('--gold', '#a87c5b');
-        document.documentElement.style.setProperty('--gold-dark', '#8f684c');
-        document.documentElement.style.setProperty('--text', '#222');
-        document.documentElement.style.setProperty('--muted', '#6b6b6b');
+        localStorage.setItem('theme', 'light');
+        applyLightVariables();
+        modeIcon.textContent = '🌞';
       }
-    })
+    });
   }
+
+  function applyDarkVariables(){
+    document.documentElement.style.setProperty('--silk', '#0f1115');
+    document.documentElement.style.setProperty('--gold', '#b78f62');
+    document.documentElement.style.setProperty('--gold-dark', '#8f684c');
+    document.documentElement.style.setProperty('--text', '#eaeaea');
+    document.documentElement.style.setProperty('--muted', '#cfcfcf');
+  }
+
+  function applyLightVariables(){
+    document.documentElement.style.setProperty('--silk', '#fdfcfb');
+    document.documentElement.style.setProperty('--gold', '#a87c5b');
+    document.documentElement.style.setProperty('--gold-dark', '#8f684c');
+    document.documentElement.style.setProperty('--text', '#222');
+    document.documentElement.style.setProperty('--muted', '#6b6b6b');
+  }
+
 });
+
+// ------------------------
 // Hamburger toggle
+// ------------------------
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
